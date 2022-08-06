@@ -1,0 +1,666 @@
+@keyframes logo {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes mouse {
+    0% {
+        opacity: 1;
+        top: 8px;
+    }
+
+    100% {
+        opacity: 0;
+        top: 18px;
+    }
+}
+
+@keyframes mouse2 {
+    0% {
+        opacity: 1;
+        bottom: -10px;
+    }
+
+    0% {
+        opacity: 1;
+        bottom: -14px;
+    }
+
+    100% {
+        opacity: 1;
+        bottom: -12px;
+    }
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    z-index: 10;
+    max-width: 1000px;
+    width: 100%;
+    padding: 10px 0;
+    background-color: rgb(2, 2, 56);
+    border-bottom: 5px solid whitesmoke;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+}
+
+.menu a {
+    color: whitesmoke;
+    text-decoration: none;
+    font-size: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    margin: 0 20px;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    background: no-repeat center url(images/backpackerpucklogo.png);
+    background-size: contain;
+    animation: logo 3s infinite ease;
+    animation-direction: alternate;
+    margin-left: 20px;
+}
+
+.logo:hover {
+    animation-play-state: paused;
+}
+
+/* Бургер */
+.burger {
+    position: relative;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 45px;
+    margin: 0 20px 0 auto;
+}
+
+.burger::before,
+.burger::after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    content: '';
+    width: 80%;
+    height: 3px;
+    background: #fff;
+}
+
+.burger::before {
+    top: 20%;
+}
+
+.burger::after {
+    bottom: 20%;
+}
+
+.burger-line {
+    width: 80%;
+    height: 3px;
+    background: #fff;
+}
+
+.burger.open .burger-line {
+    display: none;
+}
+
+.burger.open::before,
+.burger.open::after {
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.burger.open::before {
+    transform: rotate(45deg);
+}
+
+.burger.open::after {
+    transform: rotate(-45deg);
+}
+
+
+.images {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 600px;
+    background: black url(images/ch1.jpg) 0 / cover no-repeat fixed;
+    box-shadow: 0 0 0 300px rgba(0, 0, 0, 0.5) inset;
+    position: relative;
+    padding-top: 75px;
+}
+
+.images.images2 {
+    background-image: url(images/Serfing-Kuta1.jpg);
+}
+
+.mouse {
+    width: 25px;
+    height: 45px;
+    border: 2px solid white;
+    bottom: 30px;
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    border-radius: 14px;
+    position: absolute;
+}
+
+.mouse::before {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    content: "";
+    width: 3px;
+    height: 13px;
+    background-color: white;
+    top: 5px;
+    animation: mouse 1s infinite;
+
+}
+
+.mouse::after {
+    content: "";
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    transform: rotate(-45deg);
+    bottom: -10px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    border-left: 2px solid white;
+    border-bottom: 2px solid white;
+    animation: mouse2 1s infinite;
+}
+
+
+.image__title {
+    color: rgb(229, 229, 233);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+}
+
+.image__button {
+    width: 200px;
+    margin: 10px auto 0;
+    padding: 10px;
+    border-left: 5px solid yellow;
+    color: yellow;
+    text-align: center;
+    background-color: rgb(2, 2, 56);
+    display: block;
+}
+
+.heading {
+    padding: 15px 0;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    color: cornsilk;
+    background-color: rgb(2, 2, 56);
+}
+
+.content {
+    padding: 80px;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+}
+
+.content p {
+    margin: 10px 0;
+    text-align: justify;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.trips {
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid black;
+    border-bottom: none;
+}
+
+.trips-item {
+    width: 33.333%;
+    border: 1px solid black;
+}
+
+.trips img {
+    width: 120px;
+    height: 120px;
+    display: block;
+    margin: auto;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.trips h5 {
+    text-align: center;
+    color: rgb(2, 2, 56);
+    text-transform: uppercase;
+    padding: 1px;
+}
+
+.trips__hr {
+    position: relative;
+    border: none;
+    height: 6px;
+    width: 80px;
+    background: yellow;
+    margin: 2px auto 1px;
+}
+
+.trips p {
+    color: black;
+    text-align: center;
+    padding: 25px 10px 0;
+    display: none;
+}
+
+.question {
+    display: block;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    border: 2px solid black;
+    padding: 50px;
+}
+
+.question__title {
+    color: rgb(2, 2, 56);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.question__button {
+    width: 200px;
+    margin: 5px auto 0;
+    padding: 10px;
+    color: white;
+    text-align: center;
+    background-color: rgb(2, 2, 56);
+    display: block;
+    border: 2px solid yellow;
+}
+
+.question__button:hover {
+    color: black;
+    background-color: rgb(2, 2, 56);
+}
+
+.popup {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 15;
+    background: rgba(0, 0, 0, 0.54);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.popup-content {
+    position: relative;
+    width: 500px;
+    padding: 50px;
+    background-color: #fff;
+    border: 2px solid #ff8100;
+}
+
+.popup-content::before {
+    position: absolute;
+    top: -35px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    content: '';
+    width: 70px;
+    height: 70px;
+    background: url(images/backpackerpucklogo.png);
+    background-size: contain;
+}
+
+.close {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    content: '';
+    width: 35px;
+    height: 35px;
+    background: #ff8100;
+
+}
+
+.close:before,
+.close:after {
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    content: ' ';
+    height: 50%;
+    width: 10%;
+    background-color: #333;
+}
+
+.close:before {
+    transform: rotate(45deg);
+}
+
+.close:after {
+    transform: rotate(-45deg);
+}
+
+.close:hover {
+    opacity: 1;
+}
+
+
+.popup-title {
+    color: rgb(2, 2, 56);
+    font-size: 20px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 5px;
+    border: 2px solid #ff8100;
+    outline: none;
+    transition: 1s ease;
+}
+
+input[type="text"].error,
+input[type="email"].error,
+input[type="tel"].error,
+textarea.error {
+    border-color: red;
+}
+
+textarea {
+    min-height: 100px;
+    resize: none;
+}
+
+input[type="submit"] {
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    background-color: rgb(2, 2, 56);
+    border: 2px solid #ff8100;
+    padding: 5px;
+    text-transform: uppercase;
+}
+
+.form-error {
+    display: none;
+    color: red;
+    font-size: 12px;
+    margin-top: 20px;
+}
+
+.popup-success {
+    display: none;
+}
+
+.faq {
+    padding: 20px;
+    border-left: 2px solid rgb(2, 2, 56);
+    border-right: 2px solid rgb(2, 2, 56);
+}
+
+.faq-item {
+    margin-bottom: 20px;
+}
+
+.faq-item:last-child {
+    margin-bottom: 0;
+}
+
+
+
+.faq-title {
+    color: rgb(2, 2, 56);
+    font-size: 1.5em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    padding-bottom: 10px;
+
+}
+
+.faq-item__title {
+    padding: 10px 15px;
+    background-color: rgb(2, 2, 56);
+    color: white;
+}
+
+.faq-item__answer {
+    padding: 10px 15px;
+    display: none;
+}
+
+.footer {
+    padding: 20px 0;
+    background: rgb(2, 2, 56);
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer__contacts {
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.caption {
+    color: yellow;
+    margin: 0px 40px;
+    line-height: 30px;
+}
+
+.adress {
+    color: yellow;
+    margin: 0px 40px;
+    line-height: 30px;
+}
+
+.info {
+    color: snow;
+    text-decoration: none;
+    margin: 0px 40px;
+    line-height: 30px;
+}
+
+
+.footer__logo {
+    width: 100px;
+    height: 100px;
+    background: no-repeat center url(images/backpackerpucklogo.png);
+    background-size: cover;
+    padding: 80px;
+}
+
+.footer__text p {
+    color: blanchedalmond;
+    text-align: right;
+    margin: 0px 40px;
+    line-height: 30px;
+}
+
+.cookies {
+    position: fixed;
+    width: 100%;
+    padding: 50px 0;
+    background-color: rgb(4, 4, 36, 0.9);
+    bottom: 0;
+    z-index: 10;
+}
+
+.cookies-content {
+    position: relative;
+}
+
+.wrapper-cookies {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.cookies img {
+    width: 100px;
+    height: 100px;
+    margin: 0 0 0 50px;
+}
+
+.cookies-text {
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0 0 0 50px;
+    color: white;
+    
+}
+
+
+.cookies-button {
+    width: 200px;
+    padding: 10px;
+    color: rgb(4, 4, 36,);
+    text-align: center;
+    text-transform: uppercase;
+    background-color: burlywood;
+    display: block;
+    border: 2px solid white;
+    margin: 0 0 0 50px;
+}
+
+.close-cookies {
+    position: absolute;
+    right: 32px;
+    top: 80px;
+    width: 32px;
+    height: 32px;
+    
+}
+
+.close-cookies:before,
+.close-cookies:after {
+    position: absolute;
+    left: 40px;
+    top: -80px;
+    content: ' ';
+    height: 33px;
+    width: 4px;
+    background-color: white;
+}
+
+.close-cookies:before {
+    transform: rotate(45deg);
+}
+
+.close-cookies:after {
+    transform: rotate(-45deg);
+}
+
+.top-button {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    background: yellow;
+    padding: 15px 25px;
+    border-radius: 50%;
+    text-decoration: none;
+}
+
+
+.top-button::after {
+    content: '\2B06';
+    color: black;
+    font-size: 25px;
+}
+
+/* Задание для 6 блоков */
+/* 900 и меньше мы делаем 2 колонки блоков, */
+/* 767 и меньше делаем в 1 колонку */
+
+@media (max-width: 900px) {
+    .trips-item {
+        width: 50%;
+    }
+}
+
+@media (max-width: 767px) {
+    .menu {
+        display: none;
+        position: fixed;
+        top: 75px;
+        right: -100%;
+        background: rgba(2, 2, 56, .5);
+        padding: 30px 30px 50px;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .burger {
+        display: flex;
+    }
+
+    .trips-item {
+        width: 100%;
+    }
+
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer__logo {
+        display: none;
+    }
+
+    .footer__text p {
+        text-align: center;
+    }
+}
